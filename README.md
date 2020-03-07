@@ -1,1 +1,1 @@
-# glh-fearless-team
+# kickstarter-for-lawyers
