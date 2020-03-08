@@ -1,6 +1,6 @@
 +++
 title = "Employment Standards"
-date = 2020-02-02
+date = 2020-06-03
 [extra]
 author = "Legal Ease"
 +++
