@@ -1,1 +1,23 @@
 @import "index";
+
+div.form-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 0 10vmax;
+
+    & > * {
+        display: block;
+        width: 100%;
+    }
+}
+span.badge {
+    display: inline-block !important;
+    padding: revert !important;
+    margin-right: 16px;
+    width: max-content;
+}
+ul.autocomplete-content li {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
