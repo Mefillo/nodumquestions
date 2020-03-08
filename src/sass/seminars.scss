@@ -1,0 +1,72 @@
+.search-header .center{
+    width: 100%;
+    text-align: center;
+}
+* {
+    font-family: Roboto Slab;
+}
+#search-head{
+    font-size: 35px;
+    margin-top: 60px;
+}
+
+textarea.materialize-textarea{
+    padding: 0px;
+}
+
+.search-bar{
+    width: 100%;
+}
+
+#icon-prefix2{
+    padding-bottom: -220px;
+}
+
+textarea.materialize-textarea {
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 22px;
+}
+
+.archive{
+    margin: auto;
+    width: 80%;
+    @media (max-width: 500px){
+        margin: 0px;
+    }
+}
+.line{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    margin-right: 20px;
+    width: 350px;
+    background-color: #F3FFF0;
+    @media (max-width: 500px){
+        width: 280px;
+        margin-left: -30px;
+    }
+    .card-content{
+        p{
+            color: #3a3a3a;
+        }
+    }
+    .card-title{
+        color: #3a3a3a;
+    }
+    .date-name{
+        display: flex;
+        justify-content: space-between;
+        .card-date{
+            margin-left: 20px;
+        }
+        .card-name{
+            margin-right: 30px;
+        }
+    }
+}
+
+.row{
+    margin: 0px;
+}

@@ -1,56 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/nav.css">
-    <meta charset="UTF-8">
-    <title>{{ section.title }}</title>
-</head>
-<body>
-    <navbar class="nav">
-        <div class="left">
-            <div class="logo">
-                <img src="/images/logo.png" alt="">
-                <p class="logo">AskAndy</p>
-            </div>
-            <div class="links">
-                <ul>
-                    <li><a href="">How does it work?</a></li>
-                    <li><a href="">Calendar</a></li>
-                    <li><a href="">For lawyers</a></li>
-                </ul>
-            </div>
+{% extends "base.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="/seminars.css">
+{% endblock head %}
+
+{% block content %}
+<div class="search-header center"><p id="search-head">Search for related topics</p></div>
+<div class="search-bar center">
+<div class="row ">
+    <form class="col s12">
+      <div class="row ">
+          <div class="input-field offset-s3 col s6">
+            <i class="material-icons prefix">search</i>
+            <input placeholder="Search" id="first_name" type="text" class="validate">
+          </div>
         </div>
-        <div class="right">
-            <div class="account">
-                <div class="login">LogIn</div>
-                <div class="signup">SignUp</div>
-            </div>
-        </div>
-    </navbar>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="archive">
+    <ul class="collapsible expandable">
+        <li>
+          <div class="collapsible-header active"><i class="material-icons">archive</i>Archive</div>
+          <div class="collapsible-body active">  <div class="row marg">
 
+                <div class="line">
+                {% set today=now()|date %}
+                {% for card in section.pages %}
+                  {% if card.date >= today %}                    
+                  {% endif %}
+                {% endfor %}
+                <div class="card darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">You</span>
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="date-name">
+                        <div class="card-date">
+                            <p>12/12/2020</p>
+                        </div>
+                        <div class="card-name">
+                            <p>by Legal help</p>
+                        </div>
+                    </div>
+                    <div class="card-action" style = "display: flex; justify-content: space-evenly;">
+                      <a href="#"class="dark-grey">Read more</a>
+                      <a href="#">Sign up</a>
+                    </div>
+                  </div>
+                                  <div class="card darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">You</span>
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="date-name">
+                        <div class="card-date">
+                            <p>12/12/2020</p>
+                        </div>
+                        <div class="card-name">
+                            <p>by Legal help</p>
+                        </div>
+                    </div>
+                    <div class="card-action" style = "display: flex; justify-content: space-evenly;">
+                      <a href="#"class="dark-grey">Read more</a>
+                      <a href="#">Sign up</a>
+                    </div>
+                  </div>
+            
+          </div>
+          <div class="row">
+          </div></div></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">live_tv</i>Upcoming</div>
+          <div class="collapsible-body">
+          <div class="row marg">
+          <div class="line">
+            {% set today=now()|date %}
+            {% for card in section.pages %}
+              {% if card.date >= today %}                    
+              {% endif %}
+            {% endfor %}
+            <div class="card darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">You</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="date-name">
+                    <div class="card-date">
+                        <p>12/12/2020</p>
+                    </div>
+                    <div class="card-name">
+                        <p>by Legal help</p>
+                    </div>
+                </div>
+                <div class="card-action" style = "display: flex; justify-content: space-evenly;">
+                  <a href="#"class="dark-grey">Read more</a>
+                  <a href="#">Sign up</a>
+                </div>
+              </div>
+                              <div class="card darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">You</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="date-name">
+                    <div class="card-date">
+                        <p>12/12/2020</p>
+                    </div>
+                    <div class="card-name">
+                        <p>by Legal help</p>
+                    </div>
+                </div>
+                <div class="card-action" style = "display: flex; justify-content: space-evenly;">
+                  <a href="#"class="dark-grey">Read more</a>
+                  <a href="#">Sign up</a>
+                </div>
+              </div>
+        
+      </div>
+    </div>
+</div>
+        </li>
 
+      </ul>
+</div>
 
-
-
-
-    <!-- <p>
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          Link with href
-        </a>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          Button with data-target
-        </button>
-      </p>
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-        </div>
-      </div> -->
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock content %}
