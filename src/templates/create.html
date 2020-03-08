@@ -1,10 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>{{ page.title }}</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
+    <script src="https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js"></script>
+
+    <link rel="stylesheet" href="/create.css">
 </head>
 <body>
-<!-- content goes here -->
+<div class="form-wrapper">
+    <ul class="stepper linear horizontal">
+        <li class="step active">
+            <div class="step-title waves-effect">
+                <h1>First, let’s get you set up.</h1>
+                <h3>Pick a legal topic to connect with a specific group.</h3>
+            </div>
+            <div class="step-content">
+                <div class="input-field">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" id="autocomplete-input" class="autocomplete">
+                    <label for="autocomplete-input">Autocomplete</label>
+                </div>
+                <div class="step-actions">
+                    <!-- Here goes your actions buttons -->
+                    <button class="waves-effect waves-dark btn next-step">NEXT</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const data = {
+            "Administrative": "/images/badge.png",
+            "Admiralty": "/images/badge.png",
+            "Agency": "/images/badge.png",
+            "Alcohol": "/images/badge.png",
+            "Alternative dispute resolution": "/images/badge.png",
+            "Animal": "/images/badge.png",
+            "Antitrust": "/images/badge.png",
+            "Art": "/images/badge.png",
+            "Aviation": "/images/badge.png",
+            "Banking": "/images/badge.png",
+            "Bankruptcy": "/images/badge.png",
+            "Bioethics": "/images/badge.png",
+            "Business": "/images/badge.png",
+            "Business organizations": "/images/badge.png",
+            "Canon": "/images/badge.png",
+            "Civil": "/images/badge.png",
+            "Class action litigation": "/images/badge.png",
+            "Communications": "/images/badge.png",
+            "Computer": "/images/badge.png",
+            "Competition": "/images/badge.png",
+            "Constitutional": "/images/badge.png",
+            "Construction": "/images/badge.png",
+            "Consumer": "/images/badge.png",
+            "Contract": "/images/badge.png",
+            "Copyright": "/images/badge.png",
+            "Corporate": "/images/badge.png",
+            "Criminal": "/images/badge.png",
+            "Cryptography": "/images/badge.png",
+            "Cultural property": "/images/badge.png",
+            "Cyber": "/images/badge.png",
+            "Defamation": "/images/badge.png",
+            "Drug control": "/images/badge.png",
+            "Elder": "/images/badge.png",
+            "Employment": "/images/badge.png",
+            "Energy": "/images/badge.png",
+            "Entertainment": "/images/badge.png",
+            "Environmental": "/images/badge.png",
+            "Family": "/images/badge.png",
+            "Financial services regulation": "/images/badge.png",
+            "Firearm": "/images/badge.png",
+            "Food": "/images/badge.png",
+            "Gaming": "/images/badge.png",
+            "Health and safety": "/images/badge.png",
+            "Health": "/images/badge.png",
+            "Immigration": "/images/badge.png",
+            "Insurance": "/images/badge.png",
+            "Intellectual property": "/images/badge.png",
+            "International": "/images/badge.png",
+            "International human rights": "/images/badge.png",
+            "International trade and finance": "/images/badge.png",
+            "Internet": "/images/badge.png",
+            "Juvenile": "/images/badge.png",
+            "Labour": "/images/badge.png",
+            "Litigation": "/images/badge.png",
+            "Martial": "/images/badge.png",
+            "Media": "/images/badge.png",
+            "Medical": "/images/badge.png",
+            "Military": "/images/badge.png",
+            "Mining": "/images/badge.png",
+            "Music": "/images/badge.png",
+            "Nationality": "/images/badge.png",
+            "Obscenity": "/images/badge.png",
+            "Parliamentary": "/images/badge.png",
+            "Patent": "/images/badge.png",
+            "Poverty": "/images/badge.png",
+            "Privacy": "/images/badge.png",
+            "Procedural": "/images/badge.png",
+            "Property": "/images/badge.png",
+            "Public health": "/images/badge.png",
+            "Public International": "/images/badge.png",
+            "Real estate": "/images/badge.png",
+            "Securities": "/images/badge.png",
+            "Space": "/images/badge.png",
+            "Sports": "/images/badge.png",
+            "Statutory": "/images/badge.png",
+            "Tax": "/images/badge.png",
+            "Technology": "/images/badge.png",
+            "Tort": "/images/badge.png",
+            "Trademark": "/images/badge.png",
+            "Transport": "/images/badge.png",
+            "Trusts & estates": "/images/badge.png",
+            "Water": "/images/badge.png",
+        }
+
+        new MStepper(document.querySelector('.stepper'), {});
+        M.Autocomplete.init(document.querySelectorAll('.autocomplete'), {
+            data: data,
+            onAutocomplete: (e) => console.log(e)
+        });
+    });
+</script>
 </body>
 </html>
