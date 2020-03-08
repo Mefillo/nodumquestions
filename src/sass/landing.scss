@@ -1,70 +1,4 @@
 
-* {
-    font-family: Roboto Slab;
-}
-navbar{
-    display: flex;
-    background-color: #F3FFF0;
-    justify-content: space-between;
-}
-.logo{
-    display: flex;
-    font-size: 15px;
-    font-family: Roboto Slab;
-}
-.logo p{
-    margin-left: 20px;
-    color: #007C14;
-
-}
-img{
-    width: 50px;
-    height: 50px;
-}
-.links ul{
-    display: flex;
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: large;
-    color: #1F9B00;
-}
-
-.account{
-    display: flex;
-}
-.login{
-    color: white;
-    padding: 10px 20px;
-    margin: 5px 10px;
-    border-radius: 13px;
-    background: #1F9B00;
-    border: 2px solid #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 17px;
-}
-.signup{
-    padding: 10px 20px;
-    margin: 5px 10px;
-    border-radius: 13px;
-    background: #FFFFFF;
-    border: 1px solid #1F9B00;
-    box-sizing: border-box;
-    border-radius: 17px;
-}
-.left{
-    display: flex;
-}
-li{
-    padding-right: 14px;
-    border-right: solid 2px gray;
-}
-li:last-child{
-    border-right: none;
-}
 
 .learner{
     display: flex;
@@ -78,12 +12,20 @@ li:last-child{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    @media (max-width: 700px){
+        width: 300px;
+    }
+    
 }
 
 .promo h2{
     width: 600px;
     font-size: 30px;
     color: #0ED290;
+    @media (max-width: 700px){
+        font-size: 25px;
+        width: 350px;
+    }
 }
 
 .promo h4 {
@@ -92,12 +34,19 @@ li:last-child{
     margin-left: 80px;
     color: #020075;
     margin-bottom: 50px;
+    @media (max-width: 700px){
+        font-size: 15px;
+        width: 300px;
+        margin-left: 0px;
+    }
 }
 
 .promo img {
 
     width: 120px;
     height: 120px;
+    @media (max-width: 700px){
+    }
 }
 
 .promo .lets{
@@ -109,26 +58,48 @@ li:last-child{
     border: 1px solid #979797;
     box-sizing: border-box;
     border-radius: 20px;
+    width: 200px;
+    text-align: center;
+    @media (max-width: 700px){
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
 }
-
-section{
-    border-top: solid 1px rgb(224, 253, 217);
-    
+.description.d-user{
+    h6{
+        color: rgb(240, 240, 240);
+    }
+    h5{
+        color: #0ED290;
+    }
+}
+section.learner{
+    background-color: #4285f4;
 }
 .lawyer{
     display: flex;
     flex-direction: column;
+}
+.q-user{
+    h2{
+        color:rgb(159, 245, 138);
+    }
 }
 
 
 .description{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .point{
     margin-right: 80px;
     margin-bottom: 40px;
     width: 300px;
+    @media (max-width: 700px){
+        margin-right: 0px;
+        
+    }
 }
 .point h5{
     font-size: 18px;
@@ -139,6 +110,9 @@ section{
 }
 .point:first-child{
     margin-left: 50px;
+    @media (max-width: 700px){
+        margin-left: auto;
+    }
 }
 .point:last-child{
     margin-right: 50px;

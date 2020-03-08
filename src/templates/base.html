@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $(".button-collapse").sideNav();
+    });
+    </script>
+    {% block head %}
+      
+    {% endblock head %}
+    </head>
+    <body>
+       <div class="navbar-fixed">
+          <nav>
+              <div class="nav-wrapper">
+                 <a href="#!" class="brand-logo center">
+                    <div class="logo">
+                        <img src="/images/logo.png" alt="">
+                        <p class="logo"></p>
+                    </div>
+                </a>
+                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                 <ul class="left hide-on-med-and-down">
+                    <li><a class="nav-links" href="sass.html">About</a></li>
+                    <li><a class="nav-links" href="badges.html">For lawyers</a></li>
+                    <li><a class="nav-links" href="collapsible.html">Calendar</a></li>
+                </ul>
+                <div class="right log-buttons">
+                    <a class="waves-effect waves-light btn">LogIn</a>
+                    <a class="waves-effect waves-light btn">SignUp</a>
+                </div>
+                <div class=""
+             </div>
+          </nav>
+       </div>
+       <ul class="side-nav" id="mobile-demo">
+            <li><a href="about">About</a></li>
+            <li><a href="badges.html">For lawyers</a></li>
+            <li><a href="collapsible.html">Calendar</a></li>
+            <li><a href="collapsible.html">LogIn</a></li>
+            <li><a href="collapsible.html">SignUp</a></li>
+
+      </ul>
+
+      {% block content %}
+              
+      {% endblock content %}
+    </body>

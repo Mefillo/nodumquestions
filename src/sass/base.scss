@@ -1,0 +1,52 @@
+.logo{
+    display: flex;
+    font-size: 15px;
+    font-family: Roboto Slab;
+    p{
+        margin-left: 20px;
+        color: #007C14;
+        margin: auto;
+    }
+    img{
+
+        @media (max-width: 700px) {
+            width: 100px;
+            height: 100px;
+        }
+        width: 120px;
+        height: 120px;
+        margin-top: -25px;
+    }
+}
+
+.nav-wrapper{
+    background-color: #F3FFF0;
+}
+
+nav {
+    a.button-collapse{
+        color: #3a3a3a;
+    }
+    ul a.nav-links{
+        color: #3a3a3a;
+        font-size: 20px;
+    }
+    li:first-child{
+        margin-left: 30px;
+    }
+}
+.log-buttons{
+    a{
+        @media (max-width: 700px) {
+            display: none;
+        }
+        margin-right: 20px;
+        color: white;
+        background-color: #1F9B00;
+        border-radius: 20px;
+    }
+    
+    a:last-child{
+        margin-right: 30px;
+    }
+}
