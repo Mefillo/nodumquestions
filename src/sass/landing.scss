@@ -1,0 +1,157 @@
+
+* {
+    font-family: Roboto Slab;
+}
+navbar{
+    display: flex;
+    background-color: #F3FFF0;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    font-size: 15px;
+    font-family: Roboto Slab;
+}
+.logo p{
+    margin-left: 20px;
+    color: #007C14;
+
+}
+img{
+    width: 50px;
+    height: 50px;
+}
+.links ul{
+    display: flex;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: large;
+    color: #1F9B00;
+}
+
+.account{
+    display: flex;
+}
+.login{
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 10px;
+    border-radius: 13px;
+    background: #1F9B00;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 17px;
+}
+.signup{
+    padding: 10px 20px;
+    margin: 5px 10px;
+    border-radius: 13px;
+    background: #FFFFFF;
+    border: 1px solid #1F9B00;
+    box-sizing: border-box;
+    border-radius: 17px;
+}
+.left{
+    display: flex;
+}
+li{
+    padding-right: 14px;
+    border-right: solid 2px gray;
+}
+li:last-child{
+    border-right: none;
+}
+
+.learner{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.promo{
+    margin-left: 70px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.promo h2{
+    width: 600px;
+    font-size: 30px;
+    color: #0ED290;
+}
+
+.promo h4 {
+    width: 400px;
+    font-size: 20px;
+    margin-left: 80px;
+    color: #020075;
+    margin-bottom: 50px;
+}
+
+.promo img {
+
+    width: 120px;
+    height: 120px;
+}
+
+.promo .lets{
+    margin: auto;
+    padding: 20px 40px;
+    font-size: 20px;
+    color: white;
+    background: #1F9B00;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+section{
+    border-top: solid 1px rgb(224, 253, 217);
+    
+}
+.lawyer{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.description{
+    display: flex;
+    justify-content: space-evenly;
+}
+.point{
+    margin-right: 80px;
+    margin-bottom: 40px;
+    width: 300px;
+}
+.point h5{
+    font-size: 18px;
+    color: #1F9B00;
+}
+.point h6{
+    font-size: 16px;
+}
+.point:first-child{
+    margin-left: 50px;
+}
+.point:last-child{
+    margin-right: 50px;
+}
+
+.q-lawyer h2{
+    color: #0635C9;
+}
+
+.d-lawyer .point h5 {
+    color: #60B7FF;
+}
+
+.promo .l-lawyer{
+    background-color: #38A5FF;
+}
