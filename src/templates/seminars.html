@@ -27,48 +27,29 @@
 
                 <div class="line">
                 {% set today=now()|date %}
-                {% for card in section.pages %}
-                  {% if card.date >= today %}                    
-                  {% endif %}
+                {% for index in [0,1,2] %}
+                  
+                  <div class="card darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">{{section.pages[index].title}}</span>
+                      <p>{{section.pages[index].content|safe}}</p>
+                    </div>
+                    <div class="date-name">
+                        <div class="card-date">
+                            <p>{{section.pages[index].date}}</p>
+                        </div>
+                        <div class="card-name">
+                            <p>by {{section.pages[index].extra.author}}</p>
+                        </div>
+                    </div>
+                    <div class="card-action" style = "display: flex; justify-content: space-evenly;">
+                      <a href="#"class="dark-grey">Read more</a>
+                      <a href="#">Sign up</a>
+                    </div>
+                  </div>
                 {% endfor %}
-                <div class="card darken-1">
-                    <div class="card-content white-text">
-                      <span class="card-title">You</span>
-                      <p>I am a very simple card. I am good at containing small bits of information.
-                      I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="date-name">
-                        <div class="card-date">
-                            <p>12/12/2020</p>
-                        </div>
-                        <div class="card-name">
-                            <p>by Legal help</p>
-                        </div>
-                    </div>
-                    <div class="card-action" style = "display: flex; justify-content: space-evenly;">
-                      <a href="#"class="dark-grey">Read more</a>
-                      <a href="#">Sign up</a>
-                    </div>
-                  </div>
-                                  <div class="card darken-1">
-                    <div class="card-content white-text">
-                      <span class="card-title">You</span>
-                      <p>I am a very simple card. I am good at containing small bits of information.
-                      I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="date-name">
-                        <div class="card-date">
-                            <p>12/12/2020</p>
-                        </div>
-                        <div class="card-name">
-                            <p>by Legal help</p>
-                        </div>
-                    </div>
-                    <div class="card-action" style = "display: flex; justify-content: space-evenly;">
-                      <a href="#"class="dark-grey">Read more</a>
-                      <a href="#">Sign up</a>
-                    </div>
-                  </div>
+
+
             
           </div>
           <div class="row">
@@ -80,48 +61,28 @@
           <div class="row marg">
           <div class="line">
             {% set today=now()|date %}
-            {% for card in section.pages %}
-              {% if card.date >= today %}                    
-              {% endif %}
-            {% endfor %}
-            <div class="card darken-1">
-                <div class="card-content white-text">
-                  <span class="card-title">You</span>
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="date-name">
-                    <div class="card-date">
-                        <p>12/12/2020</p>
+                {% for index in [3,4,5,6] %}
+                  
+                  <div class="card darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">{{section.pages[index].title}}</span>
+                      <p>{{section.pages[index].content|safe}}</p>
                     </div>
-                    <div class="card-name">
-                        <p>by Legal help</p>
+                    <div class="date-name">
+                        <div class="card-date">
+                            <p>{{section.pages[index].date}}</p>
+                        </div>
+                        <div class="card-name">
+                            <p>by {{section.pages[index].extra.author}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card-action" style = "display: flex; justify-content: space-evenly;">
-                  <a href="#"class="dark-grey">Read more</a>
-                  <a href="#">Sign up</a>
-                </div>
-              </div>
-                              <div class="card darken-1">
-                <div class="card-content white-text">
-                  <span class="card-title">You</span>
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="date-name">
-                    <div class="card-date">
-                        <p>12/12/2020</p>
+                    <div class="card-action" style = "display: flex; justify-content: space-evenly;">
+                      <a href="#"class="dark-grey">Read more</a>
+                      <a href="#">Sign up</a>
                     </div>
-                    <div class="card-name">
-                        <p>by Legal help</p>
-                    </div>
-                </div>
-                <div class="card-action" style = "display: flex; justify-content: space-evenly;">
-                  <a href="#"class="dark-grey">Read more</a>
-                  <a href="#">Sign up</a>
-                </div>
-              </div>
+                  </div>
+                {% endfor %}
+            
         
       </div>
     </div>
