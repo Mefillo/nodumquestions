@@ -76,7 +76,56 @@
         </li>
         <li>
           <div class="collapsible-header"><i class="material-icons">live_tv</i>Upcoming</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          <div class="collapsible-body">
+          <div class="row marg">
+          <div class="line">
+            {% set today=now()|date %}
+            {% for card in section.pages %}
+              {% if card.date >= today %}                    
+              {% endif %}
+            {% endfor %}
+            <div class="card darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">You</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="date-name">
+                    <div class="card-date">
+                        <p>12/12/2020</p>
+                    </div>
+                    <div class="card-name">
+                        <p>by Legal help</p>
+                    </div>
+                </div>
+                <div class="card-action" style = "display: flex; justify-content: space-evenly;">
+                  <a href="#"class="dark-grey">Read more</a>
+                  <a href="#">Sign up</a>
+                </div>
+              </div>
+                              <div class="card darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">You</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="date-name">
+                    <div class="card-date">
+                        <p>12/12/2020</p>
+                    </div>
+                    <div class="card-name">
+                        <p>by Legal help</p>
+                    </div>
+                </div>
+                <div class="card-action" style = "display: flex; justify-content: space-evenly;">
+                  <a href="#"class="dark-grey">Read more</a>
+                  <a href="#">Sign up</a>
+                </div>
+              </div>
+        
+      </div>
+    </div>
+</div>
         </li>
 
       </ul>
