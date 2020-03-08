@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>{{ page.title }}</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
@@ -13,18 +15,38 @@
     <link rel="stylesheet" href="/create.css">
 </head>
 <body>
-<div class="form-wrapper">
+<div class="form-wrapper valign-wrapper">
     <ul class="stepper linear horizontal">
         <li class="step active">
             <div class="step-title waves-effect">
-                <h1>First, let’s get you set up.</h1>
-                <h3>Pick a legal topic to connect with a specific group.</h3>
+                Area of Law
             </div>
             <div class="step-content">
+                <h1>First, let’s get you set up.</h1>
+                <h3>Pick a legal topic to connect with a specific group.</h3>
                 <div class="input-field">
-                    <i class="material-icons prefix">textsms</i>
-                    <input type="text" id="autocomplete-input" class="autocomplete">
-                    <label for="autocomplete-input">Autocomplete</label>
+                    <i class="material-icons prefix">gavel</i>
+                    <input type="text" id="autocomplete-input" class="autocomplete" required autocomplete="off">
+                    <label for="autocomplete-input">Area of law</label>
+                </div>
+                <div class="step-actions">
+                    <!-- Here goes your actions buttons -->
+                    <button class="waves-effect waves-dark btn next-step">NEXT</button>
+                </div>
+            </div>
+        </li>
+        <li class="step">
+            <div class="step-title waves-effect">
+                Description
+            </div>
+            <div class="step-content">
+                <h1>Describe what you'll be creating</h1>
+                <h5>Don't worry, you can edit this later</h5>
+                <div class="input-field">
+                    <div class="input-field">
+                        <textarea id="description" class="materialize-textarea" data-length="120"></textarea>
+                        <label for="description">Seminar description</label>
+                    </div>
                 </div>
                 <div class="step-actions">
                     <!-- Here goes your actions buttons -->
@@ -99,7 +121,6 @@
             "Music": "/images/badge.png",
             "Nationality": "/images/badge.png",
             "Obscenity": "/images/badge.png",
-            "Parliamentary": "/images/badge.png",
             "Patent": "/images/badge.png",
             "Poverty": "/images/badge.png",
             "Privacy": "/images/badge.png",
@@ -120,12 +141,114 @@
             "Trusts & estates": "/images/badge.png",
             "Water": "/images/badge.png",
         }
+        const numbers = {
+            "Administrative": 200,
+            "Admiralty": 50,
+            "Agency": 20,
+            "Alcohol": 1000,
+            "Alternative dispute resolution": 10000,
+            "Animal": 250,
+            "Antitrust": 5,
+            "Art": 15,
+            "Aviation": 0,
+            "Banking": 150,
+            "Bankruptcy": 1000,
+            "Bioethics": 0,
+            "Business": 4000,
+            "Business organizations": 0,
+            "Canon": 0,
+            "Civil": 2000,
+            "Class action litigation": 10,
+            "Communications": 0,
+            "Computer": 5,
+            "Competition": 20,
+            "Constitutional": 200,
+            "Construction": 1500,
+            "Consumer": 950,
+            "Contract": 800,
+            "Copyright": 400,
+            "Corporate": 100,
+            "Criminal": 1200,
+            "Cryptography": 0,
+            "Cultural property": 0,
+            "Cyber": 0,
+            "Defamation": 100,
+            "Drug control": 1750,
+            "Elder": 350,
+            "Employment": 200,
+            "Energy": 0,
+            "Entertainment": 0,
+            "Environmental": 50,
+            "Family": 15000,
+            "Financial services regulation": 0,
+            "Firearm": 20,
+            "Food": 0,
+            "Gaming": 5,
+            "Health and safety": 100,
+            "Health": 0,
+            "Immigration": 10000,
+            "Insurance": 100,
+            "Intellectual property": 300,
+            "International": 0,
+            "International human rights": 0,
+            "International trade and finance": 0,
+            "Internet": 0,
+            "Juvenile": 0,
+            "Labour": 3,
+            "Litigation": 15,
+            "Martial": 0,
+            "Media": 0,
+            "Medical": 10,
+            "Military": 0,
+            "Mining": 0,
+            "Music": 0,
+            "Nationality": 0,
+            "Obscenity": 0,
+            "Patent": 100,
+            "Poverty": 200,
+            "Privacy": 100,
+            "Procedural": 0,
+            "Property": 30,
+            "Public health": 0,
+            "Public International": 0,
+            "Real estate": 10,
+            "Securities": 2,
+            "Space": 0,
+            "Sports": 0,
+            "Statutory": 0,
+            "Tax": 15,
+            "Technology": 20,
+            "Tort": 250,
+            "Trademark": 60,
+            "Transport": 0,
+            "Trusts & estates": 0,
+            "Water": 1,
+        }
 
         new MStepper(document.querySelector('.stepper'), {});
-        M.Autocomplete.init(document.querySelectorAll('.autocomplete'), {
-            data: data,
-            onAutocomplete: (e) => console.log(e)
+        const autocomplete = M.Autocomplete.init(document.querySelector('.autocomplete'), { data: data });
+
+        MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+        const observer = new MutationObserver(function(mutations, observer) {
+            Array.from(autocomplete.dropdown.dropdownEl.children).forEach(row => {
+                row.removeChild(row.firstChild);
+
+                const heading = row.children[0].textContent;
+                const value = numbers[heading];
+                const badge = document.createElement('span');
+                badge.classList.add('new', 'badge', 'red');
+                badge.setAttribute('data-badge-caption', value >= 1000
+                    ? (value / 1000).toFixed(1) + 'k'
+                    : value)
+
+                row.appendChild(badge);
+            })
         });
+        observer.observe(autocomplete.dropdown.dropdownEl, {
+            childList: true
+        });
+
+        $('textarea#description').characterCounter();
     });
 </script>
 </body>
