@@ -1,0 +1,6 @@
+base_url = "https://nodumbquestions.law"
+title = "Ask Legal Questions"
+description = "There are no dumb questions when it comes to the law."
+compile_sass = true
+highlight_code = false
+build_search_index = true
